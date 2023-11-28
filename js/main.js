@@ -1,3 +1,89 @@
+function Mosaic($, source) {
+
+	$("#nanogallery").nanogallery2({
+
+		// GALLERY AND THUMBNAIL LAYOUT
+		galleryMosaic : [                       // default layout
+			{ w: 2, h: 2, c: 1, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 2 },
+			{ w: 1, h: 2, c: 4, r: 1 },
+			{ w: 2, h: 1, c: 5, r: 1 },
+			{ w: 2, h: 2, c: 5, r: 2 },
+			{ w: 1, h: 1, c: 4, r: 3 },
+			{ w: 2, h: 1, c: 2, r: 3 },
+			{ w: 1, h: 2, c: 1, r: 3 },
+			{ w: 1, h: 1, c: 2, r: 4 },
+			{ w: 2, h: 1, c: 3, r: 4 },
+			{ w: 1, h: 1, c: 5, r: 4 },
+			{ w: 1, h: 1, c: 6, r: 4 }
+		],
+		galleryMosaicXS : [                     // layout for XS width
+			{ w: 2, h: 2, c: 1, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 2 },
+			{ w: 1, h: 2, c: 1, r: 3 },
+			{ w: 2, h: 1, c: 2, r: 3 },
+			{ w: 1, h: 1, c: 2, r: 4 },
+			{ w: 1, h: 1, c: 3, r: 4 }
+		],
+		galleryMosaicSM : [                     // layout for SM width
+			{ w: 2, h: 2, c: 1, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 1 },
+			{ w: 1, h: 1, c: 3, r: 2 },
+			{ w: 1, h: 2, c: 1, r: 3 },
+			{ w: 2, h: 1, c: 2, r: 3 },
+			{ w: 1, h: 1, c: 2, r: 4 },
+			{ w: 1, h: 1, c: 3, r: 4 }
+		],
+		galleryMaxRows: 1,
+		galleryDisplayMode: 'rows',
+		gallerySorting: 'random',
+		thumbnailDisplayOrder: 'random',
+
+		thumbnailHeight: '180', thumbnailWidth: '220',
+		thumbnailAlignment: 'scaled',
+		thumbnailGutterWidth: 2, thumbnailGutterHeight: 0,
+		thumbnailBorderHorizontal: 0, thumbnailBorderVertical: 0,
+
+		thumbnailToolbarImage: null,
+		thumbnailToolbarAlbum: null,
+		thumbnailLabel: { display: false },
+
+		// DISPLAY ANIMATION
+		// for gallery
+		galleryDisplayTransitionDuration: 1500,
+		// for thumbnails
+		thumbnailDisplayTransition: 'imageSlideUp',
+		thumbnailDisplayTransitionDuration: 1200,
+		thumbnailDisplayTransitionEasing: 'easeInOutQuint',
+		thumbnailDisplayInterval: 60,
+
+		// THUMBNAIL HOVER ANIMATION
+		thumbnailBuildInit2: 'image_scale_1.15',
+		thumbnailHoverEffect2: 'image_scale_1.15_1.00',
+		touchAnimation: true,
+		touchAutoOpenDelay: 500,
+
+		// LIGHTBOX
+		viewerToolbar: { display: false },
+		viewerTools:    {
+			topRight:  'rotateLeft, rotateRight, fullscreenButton, closeButton'
+		},
+
+		// GALLERY THEME
+		galleryTheme : {
+			thumbnail: { background: '#F2C6C5' },
+		},
+
+		itemsBaseURL: 'images/',
+		items: source,
+
+		// DEEP LINKING
+		locationHash: false
+	});
+}
+
 ;(function () {
 	
 	'use strict';
@@ -32,8 +118,13 @@
 
 	// Parallax
 	var parallax = function() {
-		if ( !isiPad() || !isiPhone() ) {
-			$(window).stellar();
+		if ( isiPad() && isiPhone() ) {
+			$(window).stellar({
+				scrollProperty: 'transform',
+				positionProperty: 'transform'
+			});
+		} else {
+			$(window).stellar()
 		}
 	};
 
@@ -137,7 +228,7 @@
 	};
 
 	// Set the date we're counting down to
-	var countDownDate = new Date("Dec 28, 2017 15:37:25").getTime();
+	var countDownDate = new Date("Dec 17, 2023 11:00:00").getTime();
 
 	// Update the count down every 1 second
 	var x = setInterval(function() {
@@ -167,11 +258,11 @@
 	// If the count down is finished, write some text 
 	if (distance < 0) {
 	 clearInterval(x);
-	 document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
-	}
-	}, 1000);
+	}}, 1000);
 
 	// Document on load.
+
+	const gallery = Array.from({length:63}).map((_,index)=>({ src: `${index+1}.jpg`, srct: `${index+1}.jpg`,   title: '' }))
 
 	$(function(){
 		mainMenu();
@@ -180,6 +271,7 @@
 		mobileMenuOutsideClick();
 		contentWayPoint();
 		stickyBanner();
+		Mosaic($, gallery)
 	});
 
 

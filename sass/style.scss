@@ -1,12 +1,11 @@
-$font-primary: 'Open Sans', Arial, sans-serif;
-$font-secondary: 'Montez', cursive;
+$font-primary: 'Beautique Display', Arial, sans-serif;
 // Overrides
 $grid-gutter-width: 40px; 
 $border-radius-base:  4px;
 $padding-base-vertical: 14px;
 
-$brand-primary: #F69D9D;
- 
+$brand-primary: #F2C6C5;
+$brand-secondary: #9D2E34;
 
 $brand-white: #fff;
 $brand-black: #000;
@@ -120,7 +119,7 @@ body {
 	line-height: 1.6;
 	font-size: 16px;
 	background: $brand-body-bg;
-	color: #848484;
+	color: $brand-secondary;
 	font-weight: 300;
 	overflow-x: hidden;
 	&.fh5co-offcanvas {
@@ -145,14 +144,13 @@ p, ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
 	color: $brand-darker;
-	font-family: $font-secondary;
 	font-weight: 400;
 	margin: 0 0 30px 0;
 }
 figure {
 	margin-bottom: 2em;
 }
-::-webkit-selection {
+-webkit-selection {
   color: $brand-body-color;
   background: $brand-selection-color;
 }
@@ -185,7 +183,6 @@ figure {
 	padding: 10px 0;
 	background: $brand-primary;
 	.fh5co-link {
-
 		a {
 			margin-left: 10px;
 			font-size: 13px;
@@ -232,11 +229,8 @@ figure {
 .fh5co-cover,
 .fh5co-hero {
 	position: relative;
-	height: 800px;
+	height: 100vh;
 	width: 100%;
-	@media screen and (max-width :$screen-sm) {
-		height: 700px;
-	}
 }
 .fh5co-overlay{
 	position: absolute !important;
@@ -250,33 +244,37 @@ figure {
 }
 
 .fh5co-cover{
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 	@media screen and (max-width: $screen-sm) {
-		heifght: inherit;
+		height: inherit;
 		padding: 3em 0;
 	}
 	.display-t{
 		display: table;
-		height: 800px;
+		height: 100%;
 		width: 100%;
 		position: relative;
 		z-index: 2;
-		@media screen and (max-width :$screen-sm) {
-			height: 600px;
-		}
 	}
 	.display-tc{
 		display: table-cell;
 		vertical-align: middle;
 		h1{
-			color: $brand-white;
+			color: $brand-primary;
+			font-weight: 600;
+			@media screen and (min-width: $screen-sm) {
+				font-size: 50px;
+			}
 		}
 		h2{
-			color: $brand-white;
-			font-size: 80px;
+			color: $brand-primary;
+			font-size: 100px;
 			margin-bottom: 30px;
-			font-weight: 300!important;
+			font-weight: 700!important;
 			strong {
 				font-weight: 700;
 			}
@@ -285,14 +283,17 @@ figure {
 			}
 		}
 		p{
-			color: $brand-white;
-			font-weight: 400;
+			color: $brand-primary;
+			font-weight: 600;
 			font-size: 16px;
 			letter-spacing: 7px;
 			span{
-				border-top: 2px solid $brand-white;
-				border-bottom: 2px solid $brand-white;
-				padding: 5px 0px;
+				border-top: 2px solid $brand-primary;
+				border-bottom: 2px solid $brand-primary;
+				padding: 5px 0;
+			}
+			@media screen and (min-width: $screen-sm) {
+				font-size: 32px;
 			}
 		}
 	}
@@ -422,15 +423,10 @@ figure {
 	font-size: 30px;
 	margin-top: 35px;
 	font-weight: 700;
-	float: left;
+	width: 100%;
+	text-align: center;
 	span{
 		font-weight: 700;
-	}
-
-	@media screen and (max-width: $screen-sm) {
-		width: 100%;
-		float: none;
-		text-align: center;
 	}
 
 	a{
@@ -592,6 +588,10 @@ figure {
 	background: $brand-light-color;
 }
 
+.fh5co-section-primary{
+	background: $brand-primary;
+}
+
 .heading-section{
 	padding-bottom: 1em;
 	margin-bottom: 3em;
@@ -614,6 +614,7 @@ figure {
 	}
 	h3{
 		font-size: 30px;
+		font-weight: 700;
 		@media screen and (max-width :$screen-sm) {
 			font-size: 35px;
 		}
@@ -621,10 +622,14 @@ figure {
 	.amp-center{
 		font-size: 60px;
 		margin-top: 100%;
-		color: rgba($brand-primary,1);
+		color: rgba($brand-secondary,1);
 		@media screen and (max-width :$screen-sm) {
 			font-size: 40px;
 		}
+	}
+	img{
+		aspect-ratio: 1/1;
+		object-fit: cover;
 	}
 }
 
@@ -633,16 +638,17 @@ figure {
 	.countdown{
 		margin-bottom: 0;
 		font-size: 80px;
-		color: $brand-white;
+		color: $brand-secondary;
 		span{
 			margin: 0 30px;
 			display: inline-block;
-			font-family: $font-secondary;
+			font-weight: 500;
 		}
 		small{
 			display: block;
-			font-size: 16px;
+			font-size: 18px;
 			font-family: $font-primary;
+			font-weight: 400;
 		}
 	}
 }
@@ -702,8 +708,9 @@ figure {
 #fh5co-started {
 	position: relative;
 	background-size: cover;
-	background-position: bottom center;
+	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -1212,12 +1219,18 @@ figure {
 }
 .fh5co-loader {
 	position: fixed;
-	left: 0px;
-	top: 0px;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
 	background: url(../images/hourglass.svg) center no-repeat #222222;
 }
 
-
+.text-secondary {
+	color: $brand-secondary;
+}
+.fh5co-map {
+	width: 100%;
+	height: 100%;
+}
