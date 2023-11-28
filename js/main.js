@@ -1,7 +1,10 @@
 function Mosaic($, source) {
 
 	$("#nanogallery").nanogallery2({
-
+		kind:             "flickr",
+		userID:           "196065796@N06",
+		flickrAPIKey:     "f4f94fbdb120ec475cdd81096bbdac38",
+		album: "72177720312982507",
 		// GALLERY AND THUMBNAIL LAYOUT
 		galleryMosaic : [                       // default layout
 			{ w: 2, h: 2, c: 1, r: 1 },
@@ -76,8 +79,8 @@ function Mosaic($, source) {
 			thumbnail: { background: '#F2C6C5' },
 		},
 
-		itemsBaseURL: 'images/',
-		items: source,
+		// itemsBaseURL: 'images/',
+		// items: source,
 
 		// DEEP LINKING
 		locationHash: false
@@ -87,19 +90,6 @@ function Mosaic($, source) {
 ;(function () {
 	
 	'use strict';
-
-	// iPad and iPod detection	
-	var isiPad = function(){
-		return (navigator.platform.indexOf("iPad") != -1);
-	};
-
-
-	var isiPhone = function(){
-	    return (
-			(navigator.platform.indexOf("iPhone") != -1) || 
-			(navigator.platform.indexOf("iPod") != -1)
-	    );
-	};
 
 	// Main Menu Superfish
 	var mainMenu = function() {
@@ -115,19 +105,6 @@ function Mosaic($, source) {
 		});
 
 	};
-
-	// Parallax
-	var parallax = function() {
-		if ( isiPad() && isiPhone() ) {
-			$(window).stellar({
-				scrollProperty: 'transform',
-				positionProperty: 'transform'
-			});
-		} else {
-			$(window).stellar()
-		}
-	};
-
 
 	// Offcanvas and cloning of the main menu
 	var offcanvas = function() {
@@ -266,7 +243,6 @@ function Mosaic($, source) {
 
 	$(function(){
 		mainMenu();
-		parallax();
 		offcanvas();
 		mobileMenuOutsideClick();
 		contentWayPoint();
