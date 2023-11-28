@@ -1,4 +1,4 @@
-function Mosaic($, source) {
+function Mosaic($) {
 
 	$("#nanogallery").nanogallery2({
 		kind:             "flickr",
@@ -239,15 +239,13 @@ function Mosaic($, source) {
 
 	// Document on load.
 
-	const gallery = Array.from({length:63}).map((_,index)=>({ src: `${index+1}.jpg`, srct: `${index+1}.jpg`,   title: '' }))
-
 	$(function(){
 		mainMenu();
 		offcanvas();
 		mobileMenuOutsideClick();
 		contentWayPoint();
 		stickyBanner();
-		Mosaic($, gallery)
+		Mosaic($)
 	});
 
 
