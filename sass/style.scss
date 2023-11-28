@@ -244,11 +244,11 @@ figure {
 }
 
 .fh5co-cover{
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 	position: relative;
+
 	@media screen and (max-width: $screen-sm) {
 		height: inherit;
 		padding: 3em 0;
@@ -629,6 +629,11 @@ figure {
 	}
 	img{
 		aspect-ratio: 1/1;
+		@supports not (aspect-ratio: 1/1) {
+			width: 240px;
+			height: 240px;
+		}
+
 		object-fit: cover;
 	}
 }
@@ -708,9 +713,8 @@ figure {
 #fh5co-started {
 	position: relative;
 	background-size: cover;
-	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-position: center;
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -723,26 +727,10 @@ figure {
 	.form-control {
 		background: rgba(0,0,0,.2);
 		border: none!important;
-		color: $brand-white;
+		color: $brand-primary;
 		font-size: 16px!important;
 		width: 100%;
 
-
-		&::-webkit-input-placeholder {
-		   color: $brand-white;
-		}
-
-		&:-moz-placeholder { /* Firefox 18- */
-		   color: $brand-white;  
-		}
-
-		&::-moz-placeholder {  /* Firefox 19+ */
-		   color: $brand-white;  
-		}
-
-		&:-ms-input-placeholder {  
-		   color: $brand-white;  
-		}
 		@include transition(.5s);
 		&:focus {
 			background: rgba(255,255,255,.3);
@@ -782,19 +770,6 @@ figure {
 	}
 }
 
-
-//GUEST
-.groom-men{
-	img{
-		margin-bottom: 20px;
-		@include border-radius(50%);
-	}
-	h3{
-		font-family: $font-primary;
-		font-size: 18px;
-	}
-}
-
 //Gallery
 .gallery{
 	margin-bottom: 30px;
@@ -827,70 +802,6 @@ figure {
 	}
 }
 
-.fh5co-blog{
-	margin-bottom: 60px;
-	a{
-		img{
-	
-			width: 100%;
-
-			&:hover{
-			}
-
-		}
-	}
-
-	@media screen and (max-width: $screen-sm) {
-		width: 100%;
-	}
-	
-
-	.blog-text {
-		margin-bottom: 30px;
-		position: relative;
-		background: $brand-white;
-		width: 100%;
-		padding: 30px;
-		float: right;
-
-		span{
-			display: inline-block;
-			margin-bottom: 20px;
-			font-size: 18px;
-			&.by{
-				color: rgba($brand-black,.5);
-				margin-right: 7px;
-			}
-			&.posted_date{
-				color: rgba($brand-black,.5);
-				margin-right: 7px;
-			}
-			&.comment{
-				a{
-					color: rgba($brand-black,.3);
-					i{
-						color: $brand-primary;
-						padding-left: 4px;
-					}
-				}
-			}
-		}
-
-		h3{
-			font-size: 20px;
-			margin-bottom: 20px;
-			font-weight: 300;
-			line-height: 1.5;
-			font-family: $font-primary;
-			a{
-				color: rgba($brand-black,.6);
-			}
-		}
-	}
-}
-
-
-
 // Map
 #map {
 	width: 100%;
@@ -917,21 +828,21 @@ figure {
 }
 
 #footer{
-	background: $brand-primary;
+	background: $brand-secondary;
 	padding: 60px 0 40px;
 
 	p{
-		color: rgba($brand-white,1);
+		color: rgba($brand-primary,1);
 		font-size: 14px;
 		a{
-			color: rgba($brand-white,.5);
+			color: rgba($brand-primary,.5);
 			&:hover, &:active, &:focus {
-				color: rgba($brand-white,.9)!important;
+				color: rgba($brand-primary,.9)!important;
 			}
 		}
 	}
 	h2{
-		color: $brand-white;
+		color: $brand-primary;
 		font-size: 60px;
 	}
 }
@@ -1219,7 +1130,7 @@ figure {
 }
 
 .text-secondary {
-	color: $brand-secondary;
+	color: $brand-secondary!important;
 }
 .fh5co-map {
 	width: 100%;

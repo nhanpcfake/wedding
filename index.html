@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href="fonts/beautique/stylesheet.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css" rel="stylesheet">
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
@@ -53,15 +53,17 @@
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body>
 <div id="fh5co-wrapper">
     <div id="fh5co-page">
 
         <div class="fh5co-hero" data-section="home">
-            <div class="fh5co-overlay"></div>
             <div class="fh5co-cover text-center"
-                 style="background-image: url(images/10.jpg);">
+                 style="background-image: url(images/10.jpg);" data-jarallax data-speed="0.2" >
+                <div class="fh5co-overlay"></div>
+
                 <div class="display-t">
                     <div class="display-tc">
                         <div class="container">
@@ -81,7 +83,7 @@
         <header id="fh5co-header-section" class="sticky-banner">
             <div class="container">
                 <div class="nav-header">
-                    <h1 id="fh5co-logo"><a href="index.html">Save Our Date</a></h1>
+                    <h1 id="fh5co-logo"><a href="index.html" class="text-secondary">Save Our Date</a></h1>
                 </div>
             </div>
         </header>
@@ -122,7 +124,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                        <h2>Wedding Gallery</h2>
+                        <h2 class="text-secondary">Wedding Gallery</h2>
                     </div>
                 </div>
                 <div id="nanogallery"></div>
@@ -146,7 +148,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2>Wedding Venue</h2>
+						<h2 class="text-secondary">Wedding Venue</h2>
 					</div>
 				</div>
 				<div class="row row-bottom-padded-md">
@@ -156,8 +158,8 @@
                                 <iframe class="fh5co-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.87750512875598!2d109.3205722879084!3d13.096646328616684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316fec48bf7c254d%3A0x43974ccddc063b94!2zTmjDoCBIw6BuZyBDw7RuZyDEkG_DoG4!5e0!3m2!1sen!2s!4v1701159089411!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
 							<div class="desc">
-								<h3>Bride’s family</h3>
-								<p><strong>Sunday, December 17, 2023, 11.00 AM</strong></p>
+								<h3 class="text-secondary">Bride’s family</h3>
+								<p><strong class="text-secondary">Sunday, December 17, 2023, 11.00 AM</strong></p>
 							</div>
 						</div>
 					</div>
@@ -167,17 +169,16 @@
                                 <iframe class="fh5co-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.42866254099852!2d106.68781955705207!3d10.192136307912744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317557d00f2c3afb%3A0x1f9c8ca0a9889782!2sTRE%20XANH!5e0!3m2!1sen!2s!4v1701159146475!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
 							<div class="desc">
-								<h3>Groom’s family</h3>
-								<p><strong>Sunday, December 24, 2023, 11.00 AM</strong></p>
+								<h3 class="text-secondary">Groom’s family</h3>
+								<p><strong class="text-secondary">Sunday, December 24, 2023, 11.00 AM</strong></p>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 
-        <div id="fh5co-started" style="background-image:url(images/7.jpg);">
+        <div id="fh5co-started" class="jarallax" style="background-image:url(images/7.jpg);" data-jarallax>
             <div class="overlay"></div>
             <div class="container">
                 <div class="row animate-box">
@@ -211,7 +212,8 @@
 <!-- jQuery -->
 <script src="dist/scripts.min.js"></script>
 <script src="js/jquery.nanogallery2.min.js"></script>
-
+<!-- Jarallax JS -->
+<script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
 </body>
 </html>
 
