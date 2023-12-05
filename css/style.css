@@ -551,14 +551,9 @@ figure {
   }
 }
 #fh5co-couple .amp-center {
-  font-size: 60px;
   margin-top: 60%;
-  color: #9d2e34;
-}
-@media screen and (max-width: 768px) {
-  #fh5co-couple .amp-center {
-    font-size: 40px;
-  }
+  display: flex;
+  justify-content: center;
 }
 #fh5co-couple img {
   margin-left: auto;
@@ -1086,7 +1081,8 @@ figure {
 }
 
 .btn-love {
-  margin: auto;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -1124,7 +1120,6 @@ figure {
   left: 50%;
   top: 50%;
   border-radius: 8px;
-  transform-origin: 50% 50% 0px;
   z-index: 99;
 }
 .btn-love .small-ornament .ornament.o-1 {

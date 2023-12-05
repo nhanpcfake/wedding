@@ -619,12 +619,9 @@ figure {
 		}
 	}
 	.amp-center{
-		font-size: 60px;
 		margin-top: 60%;
-		color: rgba($brand-secondary,1);
-		@media screen and (max-width :$screen-sm) {
-			font-size: 40px;
-		}
+		display: flex;
+		justify-content: center;
 	}
 	img{
 		margin-left: auto;
@@ -1139,7 +1136,8 @@ figure {
 }
 
 .btn-love{
-	margin:auto;
+	display: flex;
+	justify-content: center;
 	cursor:pointer;
 	background:transparent;
 	border:none;
@@ -1173,7 +1171,7 @@ figure {
 			left: 50%;
 			top: 50%;
 			border-radius:8px;
-			transform-origin: 50% 50% 0px;
+			//transform-origin: 50% 50% 0px;
 			z-index: 99;
 			&.o-1{
 				background:#988ADE;
